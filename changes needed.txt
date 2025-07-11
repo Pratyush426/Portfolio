@@ -1,0 +1,7 @@
+portfolio changes needed
+1. change the resume part - it is getting downloaded instead open it in new webpage
+2. add glass slider over the header 
+3. add backend to the send message part
+
+changes made but not updated
+1. added the projects section
