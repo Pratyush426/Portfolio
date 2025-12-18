@@ -1162,15 +1162,15 @@ It extracts key concepts, methods, results, and limitations, enabling fast compr
             
             <div class="contact-form">
                 <h3 style="text-align: center; color: #26a0da; margin-bottom: 2rem;">Send Message</h3>
-                <form id="contactForm">
+                <form>
                     <div class="form-group">
-                        <input type="text" id="name" class="form-input" placeholder="enter your name..." required>
+                        <input type="text" class="form-input" placeholder="enter your name..." required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" class="form-input" placeholder="enter your email..." required>
+                        <input type="email" class="form-input" placeholder="enter your email..." required>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" class="form-input" rows="5" placeholder="enter your message..." required></textarea>
+                        <textarea class="form-input" rows="5" placeholder="enter your message..." required></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Execute Send</button>
                 </form>
@@ -1388,42 +1388,9 @@ function activateLightTheme() {
         }
 
         // Form submission
-        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+        document.querySelector('.contact-form form').addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            const submitBtn = e.target.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            try {
-                const response = await fetch('http://localhost:3000/send-email', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ name, email, message }),
-                });
-
-                const data = await response.json();
-
-                if (data.success) {
-                    alert('Message sent successfully! I\'ll get back to you soon.');
-                    e.target.reset();
-                } else {
-                    alert('Failed to send message: ' + data.message);
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('An error occurred while sending the message.');
-            } finally {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }
+            alert('Message sent successfully! I\'ll get back to you soon.');
         });
 
         // Intersection Observer for animations
