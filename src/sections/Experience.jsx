@@ -4,7 +4,7 @@ const Experience = () => {
     const experiences = [
         {
             id: 'MOD_01',
-            role: "International Delegate",
+            role: "Harvard Delegate",
             company: "HARVARD PROJECT FOR ASIA AND INTERNATIONAL RELATIONS",
             date: "JUNE 2024",
             description: "Selected as the only delegate from my university for HPAIR Harvard Conference 2024. Honored with a global internship for outstanding innovation and leadership.",
